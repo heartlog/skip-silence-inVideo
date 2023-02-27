@@ -7,6 +7,16 @@
   <body>
     <input type="file" id="video-input">
       <video id="video-player" controls></video>
+    <script>
+      const input = document.getElementById('video-file');
+      const video = document.getElementById('video-player');
+
+      input.addEventListener('change', () => {
+        const file = input.files[0];
+        const url = URL.createObjectURL(file);
+        video.src = url;
+      });
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
